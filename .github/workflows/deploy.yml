@@ -43,12 +43,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
         run: |
-          cd src/MyLambdaFunction
-          dotnet lambda deploy-function  POCMyLambdaFunction `
+           dotnet lambda deploy-function  POCMyLambdaFunction `
             --region $env:AWS_REGION `
-            --function-role arn:aws:iam::570829448606:role/Aws_Test_Profile_Role `
-            --function-name POCMyLambdaFunction `
-            --runtime dotnet8 `
-            --timeout 30 `
-            --memory-size 256 `
-            --handler POCMyLambdaFunction::POCMyLambdaFunction.Function::FunctionHandler
+            --function-role arn:aws:iam::570829448606:role/Aws_Test_Profile_Role           
