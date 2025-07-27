@@ -22,7 +22,12 @@ jobs:
 
       - name: Show directory content
         run: Get-ChildItem -Recurse
-       
+      - name: 🔍 Show files and folders
+        run: |
+          echo "📂 Current directory:"
+          pwd
+          echo "📄 Files:"
+          dir
       - name: Restore dependencies
         run: dotnet restore  src/POCMyLambdaFunction/POCMyLambdaFunction.csproj
 
