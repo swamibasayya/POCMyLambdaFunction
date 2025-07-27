@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "2WJqK4XBX6w=",
+  "success": true,
+  "projectFilePath": "D:\\GIT_Swami\\POCMyLambdaFunction\\src\\POCMyLambdaFunction\\POCMyLambdaFunction.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\BASAYYASWAMI\\.nuget\\packages\\amazon.lambda.core\\2.7.0\\amazon.lambda.core.2.7.0.nupkg.sha512",
+    "C:\\Users\\BASAYYASWAMI\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.4.4\\amazon.lambda.serialization.systemtextjson.2.4.4.nupkg.sha512",
+    "C:\\Users\\BASAYYASWAMI\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.18\\microsoft.netcore.app.crossgen2.win-x64.8.0.18.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://basayya-swami-570829448606.d.codeartifact.us-east-2.amazonaws.com/nuget/MyLambdaFunction/v3/index.json.",
+      "projectPath": "D:\\GIT_Swami\\POCMyLambdaFunction\\src\\POCMyLambdaFunction\\POCMyLambdaFunction.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\GIT_Swami\\POCMyLambdaFunction\\src\\POCMyLambdaFunction\\POCMyLambdaFunction.csproj",
+      "targetGraphs": []
+    }
+  ]
+}

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("POCMyLambdaFunction")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59c6ac7c9432a2b11d7484c939cf7e110df1f2fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9695318f21582745b5808a8780ddcb89bfe88aab")]
 [assembly: System.Reflection.AssemblyProductAttribute("POCMyLambdaFunction")]
 [assembly: System.Reflection.AssemblyTitleAttribute("POCMyLambdaFunction")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
