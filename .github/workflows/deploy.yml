@@ -1,4 +1,4 @@
-name: Deploy to AWS Lambda
+ name: Deploy to AWS Lambda
 
 on:
   push:
@@ -10,30 +10,34 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Install Amazon Lambda Tools
-      run: dotnet tool install -g Amazon.Lambda.Tools
+      - name: Install Amazon Lambda Tools
+        run: dotnet tool install -g Amazon.Lambda.Tools
 
-    - name: Restore dependencies
-      run: dotnet restore src/POCMyLambdaFunction/POCMyLambdaFunction.csproj
+      - name: Restore dependencies
+        run: dotnet restore src/POCMyLambdaFunction/POCMyLambdaFunction.csproj
 
-    - name: Build
-      run: dotnet build src/MyLambdaFunction/POCMyLambdaFunction.csproj --configuration Release
+      - name: Build
+        run: dotnet build src/POCMyLambdaFunction/POCMyLambdaFunction.csproj --configuration Release
 
-    - name: Deploy to AWS Lambda
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: ${{ secrets.AWS_REGION }}
-
-      run: |
-       	 dotnet lambda deploy-function POCMyLambdaFunction \
-          --region $AWS_REGION \
-          --function-role arn:aws:iam::570829448606:role/Aws_Test_Profile_Role
+      - name: Deploy to AWS Lambda
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+        run: |
+          dotnet lambda deploy-function POCMyLambdaFunction `
+            --region $env:AWS_REGION `
+            --function-role arn:aws:iam::570829448606:role/Aws_Test_Profile_Role `
+            --function-name POCMyLambdaFunction `
+            --runtime dotnet8 `
+            --timeout 30 `
+            --memory-size 256 `
+            --handler POCMyLambdaFunction::POCMyLambdaFunction.Function::FunctionHandler
