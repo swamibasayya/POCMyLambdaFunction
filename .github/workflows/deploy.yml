@@ -19,6 +19,8 @@ jobs:
 
       - name: Install Amazon Lambda Tools
         run: dotnet tool install -g Amazon.Lambda.Tools
+     -  name: Show directory contents
+  	run: Get-ChildItem -Recurse
 
       - name: Restore dependencies
         run: dotnet restore  src/POCMyLambdaFunction/POCMyLambdaFunction.csproj
