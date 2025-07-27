@@ -32,10 +32,10 @@ jobs:
       -   name: Debug - Show files
           run: dir src\POCMyLambdaFunction
       - name: Restore dependencies
-        run: dotnet restore  .src/POCMyLambdaFunction/POCMyLambdaFunction.csproj
+        run: dotnet restore  ~/src/POCMyLambdaFunction/POCMyLambdaFunction.csproj
 
       - name: Build
-        run: dotnet build  .src/POCMyLambdaFunction/POCMyLambdaFunction.csproj --configuration Release
+        run: dotnet build  ~/src/POCMyLambdaFunction/POCMyLambdaFunction.csproj --configuration Release
 
       - name: Deploy to AWS Lambda
         env:
