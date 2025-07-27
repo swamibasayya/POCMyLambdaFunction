@@ -28,6 +28,8 @@ jobs:
           pwd
           echo "📄 Files:"
           dir
+      -   name: Debug - Show files
+          run: dir src\POCMyLambdaFunction
       - name: Restore dependencies
         run: dotnet restore  src/POCMyLambdaFunction/POCMyLambdaFunction.csproj
 
